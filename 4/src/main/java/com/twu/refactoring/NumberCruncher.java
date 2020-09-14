@@ -8,34 +8,52 @@ public class NumberCruncher {
     }
 
     public int countEven() {
-        int count = 0;
-        for (int number : numbers) {
-            if (number % 2 == 0) count++;
-        }
-        return count;
+        return countEvenOrOdd("Even", numbers);
     }
 
     public int countOdd() {
-        int count = 0;
-        for (int number : numbers) {
-            if (number % 2 == 1) count++;
-        }
-        return count;
+        return countEvenOrOdd("Odd", numbers);
     }
 
     public int countPositive() {
-        int count = 0;
-        for (int number : numbers) {
-            if (number >= 0) count++;
-        }
-        return count;
+        return countEvenOrOdd("Positive", numbers);
     }
 
     public int countNegative() {
-        int count = 0;
-        for (int number : numbers) {
-            if (number < 0) count++;
-        }
-        return count;
+        return countEvenOrOdd("Negative", numbers);
     }
+
+    public int countEvenOrOdd(String sign, int[] numbers) {
+        int count = 0;
+
+        switch (sign) {
+            case "Even":
+                for (int number : numbers) {
+                    if (number % 2 == 0) count++;
+                }
+                break;
+            case "Odd":
+                for (int number : numbers) {
+                    if (number % 2 == 1) count++;
+                }
+                break;
+            case "Positive":
+                for (int number : numbers) {
+                    if (number >= 0) count++;
+                }
+                break;
+            case "Negative":
+                for (int number : numbers) {
+                    if (number < 0) count++;
+                }
+                break;
+        }
+
+
+        return count;
+
+
+    }
+
+
 }
